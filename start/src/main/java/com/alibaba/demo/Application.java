@@ -1,8 +1,11 @@
 package com.alibaba.demo;
 
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.nio.file.Paths;
 
 /**
  * Spring Boot Starter
@@ -10,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Frank Zhang
  */
 @SpringBootApplication(scanBasePackages = {"com.alibaba.demo", "com.alibaba.cola"})
+@MapperScan("com.alibaba.demo.customer")
 public class Application {
 
     public static void main(String[] args) {

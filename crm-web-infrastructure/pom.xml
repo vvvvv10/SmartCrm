@@ -8,14 +8,14 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>start</artifactId>
+    <artifactId>crm-web-infrastructure</artifactId>
     <packaging>jar</packaging>
-    <name>start</name>
+    <name>demo-web-infrastructure</name>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cola.demo.web</groupId>
-            <artifactId>crm-web-adapter</artifactId>
+            <artifactId>crm-web-domain</artifactId>
         </dependency>
 
         <dependency>
@@ -23,12 +23,12 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

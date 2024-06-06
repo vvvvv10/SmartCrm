@@ -8,32 +8,25 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>start</artifactId>
+    <artifactId>crm-web-domain</artifactId>
     <packaging>jar</packaging>
-    <name>start</name>
+    <name>demo-web-domain</name>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cola.demo.web</groupId>
-            <artifactId>crm-web-adapter</artifactId>
+            <artifactId>crm-web-client</artifactId>
         </dependency>
 
+        <!-- COLA components -->
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <groupId>com.alibaba.cola</groupId>
+            <artifactId>cola-component-domain-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.alibaba.cola</groupId>
+            <artifactId>cola-component-exception</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!-- COLA components End-->
     </dependencies>
 </project>

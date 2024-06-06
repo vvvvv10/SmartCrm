@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.alibaba.cola.demo.web</groupId>
-    <artifactId>demo-web-parent</artifactId>
+    <artifactId>smart-crm-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>demo-web</name>
@@ -23,11 +23,11 @@
     </properties>
 
     <modules>
-        <module>demo-web-client</module>
-        <module>demo-web-adapter</module>
-        <module>demo-web-app</module>
-        <module>demo-web-domain</module>
-        <module>demo-web-infrastructure</module>
+        <module>crm-web-client</module>
+        <module>crm-web-adapter</module>
+        <module>crm-web-app</module>
+        <module>crm-web-domain</module>
+        <module>crm-web-infrastructure</module>
         <module>start</module>
     </modules>
 
@@ -49,27 +49,27 @@
             <!--Project modules-->
             <dependency>
                 <groupId>com.alibaba.cola.demo.web</groupId>
-                <artifactId>demo-web-adapter</artifactId>
+                <artifactId>crm-web-adapter</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cola.demo.web</groupId>
-                <artifactId>demo-web-client</artifactId>
+                <artifactId>crm-web-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cola.demo.web</groupId>
-                <artifactId>demo-web-app</artifactId>
+                <artifactId>crm-web-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cola.demo.web</groupId>
-                <artifactId>demo-web-domain</artifactId>
+                <artifactId>crm-web-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cola.demo.web</groupId>
-                <artifactId>demo-web-infrastructure</artifactId>
+                <artifactId>crm-web-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--Project modules End-->
