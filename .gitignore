@@ -24,3 +24,7 @@ nbdist/
 bin/
 doc/
 .DS_Store
+
+# Ignore YAML files
+*.yml
+*.yaml
