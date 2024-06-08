@@ -5,6 +5,7 @@ import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.alibaba.demo.api.ActivitiesServiceI;
 import com.alibaba.demo.customer.executor.CustomerAddCmdExe;
+import com.alibaba.demo.customer.executor.query.ActivitiesListByActivitiesQryExe;
 import com.alibaba.demo.customer.executor.query.ActivitiesListByNameQryExe;
 import com.alibaba.demo.customer.executor.query.CustomerListByNameQryExe;
 import com.alibaba.demo.dto.ActivitiesListByNameQry;
@@ -25,7 +26,7 @@ public class ActivitiesServiceImpl implements ActivitiesServiceI {
     private CustomerAddCmdExe customerAddCmdExe;
 
     @Resource
-    private ActivitiesListByNameQryExe activitiesListByNameQryExe;
+    private ActivitiesListByActivitiesQryExe activitiesListByActivitiesQryExe;
 
     public Response addCustomer(CustomerAddCmd customerAddCmd) {
         return customerAddCmdExe.execute(customerAddCmd);
@@ -33,6 +34,6 @@ public class ActivitiesServiceImpl implements ActivitiesServiceI {
 
     @Override
     public MultiResponse<ActivitiesDTO> listByName(ActivitiesListByNameQry qry) {
-        return activitiesListByNameQryExe.execute(qry);
+        return activitiesListByActivitiesQryExe.execute(qry);
     }
 }

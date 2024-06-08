@@ -13,7 +13,6 @@ import java.nio.file.Paths;
  * @author Frank Zhang
  */
 @SpringBootApplication(scanBasePackages = {"com.alibaba.demo", "com.alibaba.cola"})
-@MapperScan("com.alibaba.demo.customer")
 public class Application {
 
     public static void main(String[] args) {

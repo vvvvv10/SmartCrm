@@ -2,8 +2,14 @@ package com.alibaba.demo.customer;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CustomerMapper{
 
-  CustomerDO getById(String customerId);
+  CustomerDO getCustomerById(String customerId);
+
+  List<CustomerDO> getAllCustomers(CustomerDO customerDO);
+
+  void insertCustomer(CustomerDO customerDO);
 }

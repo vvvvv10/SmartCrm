@@ -2,13 +2,59 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alibaba.demo.datatunnel.CustomerTunnelI">
-    <select id="findByCriteria" resultType="com.alibaba.demo.database.dataobject.CustomerDO" resultMap="customerMap">
-        select * from customer where customer_id = #{id}
+<mapper namespace="com.alibaba.demo.customer.CustomerMapper">
+
+    <resultMap type="com.alibaba.demo.customer.CustomerDO" id="customerMap">
+        <result property="id" column="id"/>
+        <result property="customerName" column="customer_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <result property="companyName" column="company_name"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="address" column="address"/>
+        <result property="business" column="business"/>
+        <result property="remark" column="remark"/>
+        <result property="label" column="label"/>
+        <result property="sex" column="sex"/>
+    </resultMap>
+
+    <!-- 插入客户信息 -->
+    <insert id="insertCustomer" parameterType="com.alibaba.demo.customer.CustomerDO">
+        INSERT INTO customer (customer_name, create_time, update_time, is_deleted,
+        company_name, phone, email, address, business, remark, label, sex)
+        VALUES (#{customerName}, #{createTime}, #{updateTime}, #{isDeleted},
+        #{companyName}, #{phone}, #{email}, #{address}, #{business}, #{remark}, #{label}, #{sex})
+    </insert>
+
+<!--    &lt;!&ndash; 更新客户信息 &ndash;&gt;-->
+<!--    <update id="updateCustomer" parameterType="com.alibaba.demo.customer.CustomerDO">-->
+<!--        UPDATE customer-->
+<!--        SET customer_name = #{customerName}, update_time = #{updateTime},-->
+<!--        company_name = #{companyName}, phone = #{phone}, email = #{email},-->
+<!--        address = #{address}, business = #{business}, remark = #{remark},-->
+<!--        label = #{label}, sex = #{sex}-->
+<!--        WHERE id = #{id}-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; 删除客户信息 &ndash;&gt;-->
+<!--    <update id="deleteCustomer" parameterType="int">-->
+<!--        UPDATE customer-->
+<!--        SET is_deleted = 1-->
+<!--        WHERE id = #{id}-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; 根据ID查询客户信息 &ndash;&gt;-->
+<!--    <select id="getCustomerById" parameterType="int" resultType="com.alibaba.demo.customer.CustomerDO">-->
+<!--        SELECT * FROM customer-->
+<!--        WHERE id = #{id} AND is_deleted = 0-->
+<!--    </select>-->
+
+    <!-- 查询所有客户信息 -->
+    <select id="getAllCustomers" parameterType="com.alibaba.demo.customer.CustomerDO" resultMap="customerMap">
+        SELECT * FROM customer
+        WHERE is_deleted = 0
     </select>
-    <resultMap type="com.alibaba.demo.database.dataobject.CustomerDO" id="customerMap">
-         <result property="customerId" column="emp_no"/>
-         <result property="memberId" column="salary"/>
-         <result property="globalId" column="from_date"/>
-     </resultMap>
+
 </mapper>
