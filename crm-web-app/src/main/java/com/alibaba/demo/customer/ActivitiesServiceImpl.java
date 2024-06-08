@@ -8,6 +8,7 @@ import com.alibaba.demo.customer.executor.CustomerAddCmdExe;
 import com.alibaba.demo.customer.executor.query.ActivitiesListByActivitiesQryExe;
 import com.alibaba.demo.customer.executor.query.ActivitiesListByNameQryExe;
 import com.alibaba.demo.customer.executor.query.CustomerListByNameQryExe;
+import com.alibaba.demo.dto.ActivitiesAddCmd;
 import com.alibaba.demo.dto.ActivitiesListByNameQry;
 import com.alibaba.demo.dto.CustomerAddCmd;
 import com.alibaba.demo.dto.CustomerListByNameQry;
@@ -30,6 +31,16 @@ public class ActivitiesServiceImpl implements ActivitiesServiceI {
 
     public Response addCustomer(CustomerAddCmd customerAddCmd) {
         return customerAddCmdExe.execute(customerAddCmd);
+    }
+
+    @Override
+    public Response addCustomer(ActivitiesAddCmd activitiesAddCmd) {
+        return null;
+    }
+
+    @Override
+    public MultiResponse<ActivitiesDTO> listByCustomer(ActivitiesListByNameQry activitiesListByNameQry) {
+        return null;
     }
 
     @Override

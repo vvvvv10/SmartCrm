@@ -1,6 +1,5 @@
 package com.alibaba.demo.customer;
 
-import com.alibaba.demo.customer.entity.ClientInfo;
 
 /**
  * <p>

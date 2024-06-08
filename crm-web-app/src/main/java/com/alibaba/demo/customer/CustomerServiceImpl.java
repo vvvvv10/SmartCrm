@@ -2,13 +2,11 @@ package com.alibaba.demo.customer;
 
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
-import com.alibaba.cola.catchlog.CatchAndLog;
+import com.alibaba.demo.dto.CustomerAddCmd;
 import com.alibaba.demo.api.CustomerServiceI;
 import com.alibaba.demo.customer.executor.query.CustomerListByCustomerQryExe;
-import com.alibaba.demo.dto.CustomerAddCmd;
 import com.alibaba.demo.dto.CustomerListByNameQry;
 import com.alibaba.demo.dto.data.CustomerDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.demo.customer.executor.CustomerAddCmdExe;

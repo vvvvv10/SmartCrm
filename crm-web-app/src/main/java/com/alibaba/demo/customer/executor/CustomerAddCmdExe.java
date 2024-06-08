@@ -7,7 +7,6 @@ import com.alibaba.demo.api.CustomerServiceI;
 import com.alibaba.demo.domain.customer.Customer;
 import com.alibaba.demo.domain.customer.gateway.CustomerGateway;
 import com.alibaba.demo.dto.CustomerAddCmd;
-import com.alibaba.demo.dto.data.ErrorCode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
