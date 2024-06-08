@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alibaba.demo.activities.ActivitiesMapper">
-    <select id="getById" resultType="com.alibaba.demo.customer.ActivitiesDO" resultMap="activitiesMap">
+<mapper namespace="com.smart.crm.activities.ActivitiesMapper">
+    <select id="getById" resultType="com.smart.crm.customer.ActivitiesDO" resultMap="activitiesMap">
         select * from activities where id = #{id}
     </select>
-    <resultMap type="com.alibaba.demo.customer.ActivitiesDO" id="activitiesMap">
+    <resultMap type="com.smart.crm.customer.ActivitiesDO" id="activitiesMap">
          <result property="id" column="id"/>
          <result property="activityName" column="activity_name"/>
          <result property="department" column="department"/>
@@ -17,18 +17,18 @@
      </resultMap>
 
     <!-- 根据ID查询活动信息 -->
-    <select id="selectByActivities" resultMap="activitiesMap" parameterType="com.alibaba.demo.customer.ActivitiesDO">
+    <select id="selectByActivities" resultMap="activitiesMap" parameterType="com.smart.crm.customer.ActivitiesDO">
         SELECT * FROM activities
     </select>
 
     <!-- 插入活动信息 -->
-    <insert id="insertActivityInfo" parameterType="com.alibaba.demo.customer.ActivitiesDO">
+    <insert id="insertActivityInfo" parameterType="com.smart.crm.customer.ActivitiesDO">
         INSERT INTO activities (activity_name, department, person, status, start_time, end_time)
         VALUES (#{activityName}, #{department}, #{person}, #{status}, #{startTime}, #{endTime})
     </insert>
 
     <!-- 更新活动信息 -->
-    <update id="updateActivityInfo" parameterType="com.alibaba.demo.customer.ActivitiesDO">
+    <update id="updateActivityInfo" parameterType="com.smart.crm.customer.ActivitiesDO">
         UPDATE activities SET activity_name = #{activityName}, department = #{department},
         person = #{person}, status = #{status}, start_time = #{startTime}, end_time = #{endTime}
         WHERE id = #{id}
