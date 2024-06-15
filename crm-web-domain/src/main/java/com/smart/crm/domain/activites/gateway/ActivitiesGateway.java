@@ -8,6 +8,8 @@ public interface ActivitiesGateway {
 
     Activities getByById(Long customerId);
 
+    Activities add(Activities activities);
+
     List<Activities> selectByActivities(Activities activities);
 
 }

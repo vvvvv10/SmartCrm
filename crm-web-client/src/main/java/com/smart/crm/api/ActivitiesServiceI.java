@@ -8,7 +8,7 @@ import com.smart.crm.dto.data.ActivitiesDTO;
 
 public interface ActivitiesServiceI {
 
-    Response addCustomer(ActivitiesAddCmd activitiesAddCmd);
+    Response addActivities(ActivitiesAddCmd activitiesAddCmd);
 
     MultiResponse<ActivitiesDTO> listByName(ActivitiesListByNameQry activitiesListByNameQry);
 

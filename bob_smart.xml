@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="MyBatis" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://112.124.60.252:3306/smart_crm"
+                        userId="root"
+                        password="ba257032dd3ea4f7"/>
+
+        <javaModelGenerator targetPackage="com.smart.crm.clue" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" /><property name="enableSubPackages" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.smart.crm.clue" targetProject="src/main/resources"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.smart.crm.clue" targetProject="src/main/java"/>
+
+        <table schema="test" tableName="clue">
+            <columnOverride column="user_id" property="userId" />
+            <columnOverride column="activity_id" property="activityId"/>
+            <columnOverride column="clue_source" property="clueSource"/>
+            <columnOverride column="company_contacts_job_title" property="companyContactsJobTitle"/>
+            <columnOverride column="company_address" property="companyAddress"/>
+            <columnOverride column="company_contacts_email" property="companyContactsEmail"/>
+            <columnOverride column="company_contacts_sex" property="companyContactsSex"/>
+            <columnOverride column="company_contacts_tel" property="companyContactsTel"/>
+            <columnOverride column="company_contacts_name" property="companyContactsName"/>
+            <columnOverride column="company_tel" property="companyTel"/>
+            <columnOverride column="company_name" property="companyName"/>
+            <columnOverride column="assign_time" property="assignTime" javaType="java.time.LocalDateTime"/>
+            <columnOverride column="update_time" property="updateTime" javaType="java.time.LocalDateTime"/>
+            <columnOverride column="create_time" property="createTime" javaType="java.time.LocalDateTime"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

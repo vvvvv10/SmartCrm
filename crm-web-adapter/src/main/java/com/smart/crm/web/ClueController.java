@@ -1,7 +1,12 @@
 package com.smart.crm.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.alibaba.cola.dto.Response;
+import com.smart.crm.api.ClueServiceI;
+import com.smart.crm.dto.ClueAddCmd;
+import com.smart.crm.dto.ClueListByNameQry;
+import com.smart.crm.dto.CustomerAddCmd;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,12 +17,25 @@ import org.springframework.stereotype.Controller;
  * @author bob
  * @since 2024-06-04
  */
-@Controller
-@RequestMapping("/clue")
+@RestController
+@RequestMapping("/api/v1/clue")
 public class ClueController {
+
+    @Autowired
+    private ClueServiceI clueServiceI;
 
     @GetMapping(value = "/helloworld")
     public String helloWorld(){
         return "Hello, welcome to COLA world!";
+    }
+
+    @PostMapping(value = "/addClue")
+    public Response addClue(@RequestBody ClueAddCmd cmd){
+        return clueServiceI.addClue(cmd);
+    }
+
+    @PostMapping(value = "/queryClue")
+    public Response queryClue(@RequestBody ClueListByNameQry qry){
+        return clueServiceI.listByClue(qry);
     }
 }

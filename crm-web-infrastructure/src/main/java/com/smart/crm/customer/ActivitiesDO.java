@@ -24,7 +24,7 @@ public class ActivitiesDO implements Serializable {
 
     private String department;
 
-    private String person;
+    private String userId;
 
     private String status;
 

@@ -1,13 +1,12 @@
-package com.smart.crm.domain.activites;
+package com.smart.crm.domain.clue;
 
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
-public class Activities implements Serializable {
+public class Clue implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

@@ -6,7 +6,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -21,20 +23,22 @@ public class CustomerGatewayImpl implements CustomerGateway {
 
     @Override
     public Customer add(Customer customer) {
-        CustomerDO customerDO = new CustomerDO();
+        com.smart.crm.customer.Customer customerDO = new com.smart.crm.customer.Customer();
         BeanUtils.copyProperties(customer, customerDO);
-        customerMapper.insertCustomer(customerDO);
+        customerDO.setIsDeleted(false);
+        customerDO.setCreateTime(new Date());
+        customerDO.setUpdateTime(new Date());
+        customerMapper.insertSelective(customerDO);
         return null;
     }
 
     @Override
     public List<Customer> getAllCustomers(Customer customer) {
-        CustomerDO customerDO = new CustomerDO();
-        BeanUtils.copyProperties(customer, customerDO);
-        List<CustomerDO> allCustomers = customerMapper.getAllCustomers(customerDO);
+        CustomerExample customerExample = new CustomerExample();
+        List<com.smart.crm.customer.Customer> customers = customerMapper.selectByExample(customerExample);
 
         List<Customer> list = new ArrayList<>();
-        allCustomers.stream().forEach(source -> {
+        customers.stream().forEach(source -> {
             Customer target = new Customer();
             BeanUtils.copyProperties(source, target);
             list.add(target);

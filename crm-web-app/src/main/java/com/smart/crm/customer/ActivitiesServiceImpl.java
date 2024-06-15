@@ -4,6 +4,7 @@ import com.alibaba.cola.catchlog.CatchAndLog;
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.smart.crm.api.ActivitiesServiceI;
+import com.smart.crm.customer.executor.ActivitiesAddCmdExe;
 import com.smart.crm.customer.executor.CustomerAddCmdExe;
 import com.smart.crm.customer.executor.query.ActivitiesListByActivitiesQryExe;
 import com.smart.crm.dto.ActivitiesAddCmd;
@@ -20,23 +21,19 @@ import javax.annotation.Resource;
 public class ActivitiesServiceImpl implements ActivitiesServiceI {
 
     @Resource
-    private CustomerAddCmdExe customerAddCmdExe;
+    private ActivitiesAddCmdExe activitiesAddCmdExe;
 
     @Resource
     private ActivitiesListByActivitiesQryExe activitiesListByActivitiesQryExe;
 
-    public Response addCustomer(CustomerAddCmd customerAddCmd) {
-        return customerAddCmdExe.execute(customerAddCmd);
+    @Override
+    public Response addActivities(ActivitiesAddCmd cmd) {
+        return activitiesAddCmdExe.execute(cmd);
     }
 
     @Override
-    public Response addCustomer(ActivitiesAddCmd activitiesAddCmd) {
-        return null;
-    }
-
-    @Override
-    public MultiResponse<ActivitiesDTO> listByCustomer(ActivitiesListByNameQry activitiesListByNameQry) {
-        return null;
+    public MultiResponse<ActivitiesDTO> listByCustomer(ActivitiesListByNameQry qry) {
+        return activitiesListByActivitiesQryExe.execute(qry);
     }
 
     @Override

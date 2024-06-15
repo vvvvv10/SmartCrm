@@ -20,7 +20,6 @@ public class ActivitiesListByActivitiesQryExe {
     private ActivitiesGateway activitiesGateway;
 
     public MultiResponse<ActivitiesDTO> execute(ActivitiesListByNameQry qry) {
-        List<ActivitiesDTO> activitiesDTOS = new ArrayList<>();
         Activities activities1 = new Activities();
         BeanUtils.copyProperties(qry, activities1);
         List<Activities> activities = activitiesGateway.selectByActivities(activities1);

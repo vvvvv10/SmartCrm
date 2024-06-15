@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1/customer")
 public class CustomerController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class CustomerController {
         return "Hello, welcome to COLA world!";
     }
 
-    @PostMapping(value = "/customer")
+    @PostMapping(value = "/queryCustomer")
     public MultiResponse<CustomerDTO> listCustomerByName(@RequestBody CustomerListByNameQry qry){
         return customerService.listByCustomer(qry);
     }
