@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class Clue implements Serializable {
@@ -20,9 +21,9 @@ public class Clue implements Serializable {
 
     private String status;
 
-    private LocalDateTime startTime;
+    private Date startTime;
 
-    private LocalDateTime endTime;
+    private Date endTime;
 
 
 }

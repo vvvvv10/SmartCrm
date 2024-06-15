@@ -35,6 +35,7 @@ public class ActivitiesController {
     @PostMapping(value = "/addActivities")
     public Response addActivities(@RequestBody ActivitiesAddCmd cmd) {
         cmd.setStatus("1");
+        cmd.setUserId("1000");
         return activitiesService.addActivities(cmd);
     }
 }

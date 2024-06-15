@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -30,7 +31,19 @@ public class ActivitiesDTO implements Serializable {
 
     private String status;
 
-    private LocalDateTime startTime;
+    private Date startTime;
 
-    private LocalDateTime endTime;
+    private Date endTime;
+
+    private String userName;
+
+    private String activityContent;
+
+    public String getUserName() {
+        return "测试用户"+"("+userId+")";
+    }
+
+    public String getActivityContent() {
+        return "活动内容";
+    }
 }

@@ -5,6 +5,7 @@ import io.swagger.models.auth.In;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -21,9 +22,9 @@ public class ActivitiesListByNameQry extends Query{
 
    private String status;
 
-   private LocalDateTime startTime;
+   private Date startTime;
 
-   private LocalDateTime endTime;
+   private Date endTime;
 
    private Integer current;
 

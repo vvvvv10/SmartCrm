@@ -4,6 +4,7 @@ import com.alibaba.cola.dto.Query;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class ActivitiesAddCmd extends Query{
@@ -16,7 +17,7 @@ public class ActivitiesAddCmd extends Query{
 
    private String status;
 
-   private LocalDateTime startTime;
+   private Date startTime;
 
-   private LocalDateTime endTime;
+   private Date endTime;
 }

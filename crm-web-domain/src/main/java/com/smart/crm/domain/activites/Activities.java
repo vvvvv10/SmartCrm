@@ -21,9 +21,9 @@ public class Activities implements Serializable {
 
     private String status;
 
-    private LocalDateTime startTime;
+    private Date startTime;
 
-    private LocalDateTime endTime;
+    private Date endTime;
 
 
 }
