@@ -18,10 +18,8 @@ public class CustomerListByCustomerQryExe {
     @Autowired
     private CustomerGateway customerGateway;
 
-    public MultiResponse<CustomerDTO> execute(CustomerListByNameQry cmd) {
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(cmd, customer);
-        List<Customer> allCustomers = customerGateway.getAllCustomers(customer);
+    public MultiResponse<CustomerDTO> execute(CustomerListByNameQry qry) {
+        List<Customer> allCustomers = customerGateway.getAllCustomers(qry);
         List<CustomerDTO> customerDTOList = new ArrayList<>();
 
         allCustomers.stream().forEach(source -> {

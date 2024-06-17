@@ -30,4 +30,11 @@ public class CustomerController {
     public Response addCustomer(@RequestBody CustomerAddCmd cmd){
         return customerService.addCustomer(cmd);
     }
+
+    @GetMapping(value = "/getCustomerByLastTime")
+    public MultiResponse<CustomerDTO> getCustomerByLastTime(){
+        CustomerListByNameQry customerListByNameQry = new CustomerListByNameQry();
+        customerListByNameQry.setLastQueryCustomerCount(10);
+        return customerService.listByCustomer(customerListByNameQry);
+    }
 }

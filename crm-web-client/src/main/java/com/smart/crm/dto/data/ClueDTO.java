@@ -173,4 +173,10 @@ public class ClueDTO implements Serializable {
      * @mbg.generated Sat Jun 15 00:14:26 CST 2024
      */
     private String remark;
+
+    private String userName;
+
+    public String getUserName() {
+        return "测试用户"+userId;
+    }
 }

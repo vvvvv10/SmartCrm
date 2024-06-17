@@ -3,13 +3,14 @@ package com.smart.crm.customer;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class CustomerDO{
   private int id;
   private String customerName;
-  private LocalDateTime createTime;
-  private LocalDateTime updateTime;
+  private Date createTime;
+  private Date updateTime;
   private boolean isDeleted;
   private String companyName;
   private String phone;

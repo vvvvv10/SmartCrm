@@ -5,6 +5,7 @@ import com.alibaba.cola.exception.BizException;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 //Domain Entity can choose to extend the domain model which is used for DTO
 @Data
@@ -13,8 +14,8 @@ public class Customer{
 
     private int id;
     private String customerName;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
+    private Date createTime;
+    private Date updateTime;
     private boolean isDeleted;
     private String companyName;
     private String phone;

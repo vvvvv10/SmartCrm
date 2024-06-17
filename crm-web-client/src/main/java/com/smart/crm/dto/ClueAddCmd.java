@@ -3,6 +3,7 @@ package com.smart.crm.dto;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class ClueAddCmd {
@@ -104,7 +105,7 @@ public class ClueAddCmd {
      *
      * @mbg.generated Fri Jun 14 00:34:58 CST 2024
      */
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      *
@@ -113,7 +114,7 @@ public class ClueAddCmd {
      *
      * @mbg.generated Fri Jun 14 00:34:58 CST 2024
      */
-    private LocalDateTime updateTime;
+    private Date updateTime;
 
     /**
      *
@@ -122,7 +123,7 @@ public class ClueAddCmd {
      *
      * @mbg.generated Fri Jun 14 00:34:58 CST 2024
      */
-    private LocalDateTime assignTime;
+    private Date assignTime;
 
     /**
      *

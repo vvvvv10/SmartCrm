@@ -2,6 +2,8 @@ package com.smart.crm.customer;
 
 import com.smart.crm.domain.customer.Customer;
 import com.smart.crm.domain.customer.gateway.CustomerGateway;
+import com.smart.crm.dto.CustomerListByNameQry;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,10 +35,12 @@ public class CustomerGatewayImpl implements CustomerGateway {
     }
 
     @Override
-    public List<Customer> getAllCustomers(Customer customer) {
+    public List<Customer> getAllCustomers(CustomerListByNameQry qry) {
         CustomerExample customerExample = new CustomerExample();
-        List<com.smart.crm.customer.Customer> customers = customerMapper.selectByExample(customerExample);
-
+        if (null != qry && null != qry.getLastQueryCustomerCount()) {
+            customerExample.setOrderByClause("id DESC limit "+qry.getLastQueryCustomerCount()); // 设置按id列倒序排序
+        }
+        List<com.smart.crm.customer.Customer> customers = customerMapper.selectByExampleWithBLOBs(customerExample);
         List<Customer> list = new ArrayList<>();
         customers.stream().forEach(source -> {
             Customer target = new Customer();

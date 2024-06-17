@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -45,11 +46,11 @@ public class ClueDO implements Serializable {
 
     private String jobTitle;
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
     private LocalDateTime lastUpdateTime;
 
-    private LocalDateTime assignTime;
+    private Date assignTime;
 
     private String clueSource;
 

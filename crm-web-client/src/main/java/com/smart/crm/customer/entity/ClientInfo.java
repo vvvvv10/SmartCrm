@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -24,9 +25,9 @@ public class ClientInfo implements Serializable {
 
     private String clientName;
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
-    private LocalDateTime assignTime;
+    private Date assignTime;
 
     private Integer clueId;
 
